@@ -9,6 +9,9 @@ class Element {
  public:
   Element() {};
 
+  int GetTestVal() const { return test_val_; }
+  
+ private:
   int test_val_ = 20;
 
 };

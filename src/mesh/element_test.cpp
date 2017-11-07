@@ -3,5 +3,5 @@
 
 TEST (ElementTest, TestVal) {
   xpt::mesh::Element test_element{};
-  EXPECT_EQ (20, test_element.test_val_);
+  EXPECT_EQ (20, test_element.GetTestVal());
 }

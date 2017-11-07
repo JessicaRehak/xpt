@@ -26,4 +26,4 @@ install:
  - cmake ..
  - make
 script:
- - ./xpt_tests
+ - ./xpt_test

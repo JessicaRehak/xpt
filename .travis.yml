@@ -24,9 +24,10 @@ before_install:
 install:
  - mkdir build
  - cd build
- - cmake ..
+ - cmake -DCOVERALLS=ON -DCMAKE_BUILD_TYPE=Debug ..
  - make
+ - make coveralls
 script:
  - ./xpt_test
 after_success:
- - coveralls --gcov-options '\-lp'
+

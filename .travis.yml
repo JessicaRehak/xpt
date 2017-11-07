@@ -4,6 +4,7 @@ sudo: require
 language: cpp
 compiler: gcc
 before_install:
+ - pip install --user cpp-coveralls
  - mkdir $HOME/usr
  - export PATH="$HOME/usr/bin:$PATH"
  - wget https://cmake.org/files/v3.7/cmake-3.7.2-Linux-x86_64.sh
@@ -27,3 +28,5 @@ install:
  - make
 script:
  - ./xpt_test
+after_success:
+ - coveralls --gcov-options '\-lp'

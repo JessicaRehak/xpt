@@ -1,2 +1,3 @@
 ignore:
- - "*_test.*"
+ - "src/**/*_test.*"
+ - "src/*_test.*"

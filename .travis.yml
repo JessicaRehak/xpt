@@ -2,8 +2,9 @@ dist: trusty
 sudo: require
 
 addons:
- packages:
-  - lcov
+ apt:
+  packages:
+   - lcov
 
 language: cpp
 compiler: gcc

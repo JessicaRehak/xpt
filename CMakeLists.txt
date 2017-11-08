@@ -15,7 +15,7 @@ list(FILTER testing_sources EXCLUDE REGEX "main.cpp")
 
 enable_testing()
 find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIRS})
+include_directories(${GTEST_INCLUDE_DIRS}, ${CMAKE_SOURCE_DIR}/inc/)
 
 add_executable(xpt ${sources})
 add_executable(xpt_test ${testing_sources})

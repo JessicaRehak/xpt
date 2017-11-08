@@ -1,6 +1,10 @@
 dist: trusty
 sudo: require
 
+addons:
+ packages:
+  - lcov
+
 language: cpp
 compiler: gcc
 before_install:

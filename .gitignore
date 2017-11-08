@@ -38,5 +38,5 @@ build/
 doc/
 
 # Emacs backups
-.#*
-#*
+.\#*
+\#*

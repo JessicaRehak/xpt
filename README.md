@@ -5,5 +5,4 @@
 ## Included libraries
 
 - [Eigen 3.3.4](http://eigen.tuxfamily.org/index.php?title=Main_Page)
-- [libigl](https://github.com/libigl/libigl/)
 

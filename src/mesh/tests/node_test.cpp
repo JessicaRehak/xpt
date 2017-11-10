@@ -1,4 +1,4 @@
-#include "node.h"
+#include "../node.h"
 #include "gtest/gtest.h"
 #include <array>
 

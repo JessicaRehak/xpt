@@ -10,7 +10,8 @@ set ( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLA
 file(GLOB_RECURSE sources "src/*.cpp")
 set(testing_sources ${sources})
 
-list(FILTER sources EXCLUDE REGEX ".*(_test).cpp")
+list(FILTER sources EXCLUDE REGEX "main_test.cpp")
+list(FILTER sources EXCLUDE REGEX ".(/tests/).")
 list(FILTER testing_sources EXCLUDE REGEX "main.cpp")
 
 enable_testing()

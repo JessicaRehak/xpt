@@ -16,13 +16,22 @@ list(FILTER testing_sources EXCLUDE REGEX "main.cpp")
 
 enable_testing()
 find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIRS}, ${CMAKE_SOURCE_DIR}/inc, ${CMAKE_SOURCE_DIR}/inc/igl)
+set(GMOCK_INCLUDE_DIRS "/usr/include/gmock/")
+set(GMOCK_BOTH_LIBRARIES "/usr/lib/libgmock.so;/usr/lib/libgmock_main.so")
+
+get_cmake_property(_variableNames VARIABLES)
+foreach (_variableName ${_variableNames})
+    message(STATUS "${_variableName}=${${_variableName}}")
+endforeach()
+
+
+include_directories(${GTEST_INCLUDE_DIRS}, ${GMOCK_INCLUDE_DIRS}, ${CMAKE_SOURCE_DIR}/inc, ${CMAKE_SOURCE_DIR}/inc/igl)
 
 add_executable(xpt ${sources})
 add_executable(xpt_test ${testing_sources})
 add_test(NAME tests COMMAND xpt_test)
 
-target_link_libraries(xpt_test ${GTEST_BOTH_LIBRARIES})
+target_link_libraries(xpt_test ${GTEST_BOTH_LIBRARIES} ${GMOCK_BOTH_LIBRARIES})
 
 
 

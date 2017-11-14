@@ -7,10 +7,9 @@ namespace xpt {
 
 namespace mesh {
 
-template <unsigned dim>
 struct Node {
   Node() { };
-  Node(std::array<double, dim> position, unsigned index, bool is_interior) :
+  Node(std::array<double, 2> position, unsigned index, bool is_interior) :
       position(position), index(index), is_interior(is_interior) { };
   std::array<double, 2> position;
   unsigned index;

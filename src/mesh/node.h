@@ -7,21 +7,14 @@ namespace xpt {
 
 namespace mesh {
 
-class Node {
- public:
+template <unsigned dim>
+struct Node {
   Node() { };
-  Node(std::array<double, 2> position, unsigned index, bool is_interior) :
-      position_(position), index_(index), is_interior_(is_interior) { };
-
-  const std::array<double, 2> Position() const { return position_;};
-  const unsigned& Index() const { return index_; };
-  const bool& IsInterior() const { return is_interior_;};
-  
- private:
-  std::array<double, 2> position_;
-  unsigned index_;
-  bool is_interior_;
-  
+  Node(std::array<double, dim> position, unsigned index, bool is_interior) :
+      position(position), index(index), is_interior(is_interior) { };
+  std::array<double, 2> position;
+  unsigned index;
+  bool is_interior;
 };
   
 } //namespace mesh

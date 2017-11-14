@@ -9,18 +9,17 @@ namespace xpt {
 
 namespace mesh {
 
-template <unsigned dim>
 class Edge {
  public:
   Edge () { };
-  Edge (Node<dim>&, Node<dim>&);
+  Edge (Node&, Node&);
 
   float Length() const { return length_; };
-  std::array<Node<dim>, dim>& Nodes() const { return nodes_; }
+  const std::array<Node*, 2>& Nodes() const { return nodes_; }
   
  private:
   float length_;
-  std::array<Node<dim>, dim> nodes_;
+  std::array<Node*, 2> nodes_;
   
 };
 

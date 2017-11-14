@@ -6,19 +6,15 @@ namespace xpt {
 
 namespace mesh {
 
-template <unsigned dim>
-Edge<dim>::Edge (Node<dim>& node_1, Node<dim>& node_2) {
-  nodes_ = std::array<Node<dim>*, 2>(&node_1, &node_2);
+Edge::Edge (Node& node_1, Node& node_2) {
+  nodes_ = std::array<Node*, 2>{&node_1, &node_2};
 
   float sum = 0;
-  for (int i = 0; i < dim; ++i)
+  for (int i = 0; i < 2; ++i)
     sum += std::pow(node_1.Position()[i] - node_2.Position()[i], 2);
 
   length_ = std::sqrt(sum);
 }
-
-template class Edge<2>;
-template class Edge<3>;
 
 } //namespace mesh
 

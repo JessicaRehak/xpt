@@ -9,10 +9,9 @@ namespace mesh {
 
 namespace test {
 
-template <unsigned dim>
-class MockNode : public xpt::mesh::Node<dim> {
+class MockNode : public xpt::mesh::Node {
  public:
-  MOCK_CONST_METHOD0_T(Position, const std::array<double, dim>&());
+  MOCK_CONST_METHOD0_T(Position, const std::array<double, 2>&());
   MOCK_CONST_METHOD0_T(Index, const unsigned&());
   MOCK_CONST_METHOD0_T(IsInterior, const bool&());
 };

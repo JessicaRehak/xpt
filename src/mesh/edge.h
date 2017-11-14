@@ -14,7 +14,7 @@ class Edge {
   Edge () { };
   Edge (Node&, Node&);
 
-  float Length() const { return length_; };
+  const float Length() const { return length_; };
   const std::array<Node*, 2>& Nodes() const { return nodes_; }
   
  private:

@@ -13,7 +13,7 @@ class Node {
   Node(std::array<double, 2> position, unsigned index, bool is_interior) :
       position_(position), index_(index), is_interior_(is_interior) { };
 
-  const std::array<double, 2>& Position() const { return position_;};
+  const std::array<double, 2> Position() const { return position_;};
   const unsigned& Index() const { return index_; };
   const bool& IsInterior() const { return is_interior_;};
   

@@ -3,6 +3,8 @@
 
 #include "node.h"
 
+#include <array>
+
 namespace xpt {
 
 namespace mesh {
@@ -10,13 +12,15 @@ namespace mesh {
 template <unsigned dim>
 class Edge {
  public:
-  Edge() { };
-  Edge(Node<dim> node_1, Node<dim> node_2) { };
+  Edge () { };
+  Edge (Node<dim>&, Node<dim>&);
 
-  float Length() const { };
-
+  float Length() const { return length_; };
+  std::array<Node<dim>, dim>& Nodes() const { return nodes_; }
+  
  private:
-  float length_;  
+  float length_;
+  std::array<Node<dim>, dim> nodes_;
   
 };
 

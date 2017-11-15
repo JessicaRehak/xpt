@@ -21,7 +21,7 @@ before_install:
  - sudo cmake -DBUILD_SHARED_LIBS=ON .
  - sudo make
  - sudo cp -a googletest/include/gtest /usr/include
- - sudo cp -a googletest/include/gmock /usr/include
+ - sudo cp -a googlemock/include/gmock /usr/include
  - sudo cp -a googlemock/gtest/libgtest_main.so googlemock/gtest/libgtest.so /usr/lib/
  - which valgrind
  - cd "${TRAVIS_BUILD_DIR}"

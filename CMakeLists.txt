@@ -10,9 +10,9 @@ set ( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLA
 file(GLOB_RECURSE sources "src/*.cpp")
 set(testing_sources ${sources})
 
-list(FILTER sources EXCLUDE REGEX "main_test.cpp")
+#list(FILTER sources EXCLUDE REGEX "main_test.cpp")
 list(FILTER sources EXCLUDE REGEX ".(/tests/).")
-list(FILTER testing_sources EXCLUDE REGEX "main.cpp")
+#list(FILTER testing_sources EXCLUDE REGEX "main.cpp")
 
 enable_testing()
 find_package(GTest REQUIRED)
@@ -22,6 +22,7 @@ include_directories(${GTEST_INCLUDE_DIRS}, ${CMAKE_SOURCE_DIR}/inc, ${CMAKE_SOUR
 
 add_executable(xpt ${sources})
 add_executable(xpt_test ${testing_sources})
+target_compile_definitions(xpt_test PUBLIC -DTEST)
 add_test(NAME tests COMMAND xpt_test)
 
 target_link_libraries(xpt_test ${GTEST_BOTH_LIBRARIES} ${GMOCK_BOTH_LIBRARIES})
